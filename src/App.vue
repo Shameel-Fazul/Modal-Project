@@ -2,7 +2,7 @@
   <h1>{{ title }}</h1>
   <input type="text" ref="name">
   <button @click="handleClick">click me</button>
-  <Modal />
+  <Modal :header="header" text="Grab your ninja swag for half price" theme="sale" /> <!-- Sending props to other components - single source of truth (SSOT) --> <!-- Use data binding to add dynamic values or arrays; ex: header -->
 </template>
 
 <script>
@@ -13,7 +13,8 @@ export default {
   components: { Modal },
   data() {  // Component Object
     return {
-      title: 'Shameel Fazul'
+      title: 'Shameel Fazul',
+      header: "Sign up for the giveaway"
     }
   },
   methods: {
@@ -26,7 +27,7 @@ export default {
 }
 </script>
 
-<style>
+<style> /** <style scoped> to only apply styles to this component */
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
